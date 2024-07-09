@@ -1,4 +1,10 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  
+@tailwind components;
+@tailwind utilities;
+
+.backgroundPhoto {
+  background-image: url("/photo-light.jpg");
+  background-position: center;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}

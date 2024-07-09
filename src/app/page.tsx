@@ -1,5 +1,12 @@
+import HomeCards from "@/components/HomeCards";
+import HomeHeader from "@/components/HomeHeader";
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <div className="h-[calc(100vh-96px)] bg-zinc-100 dark:bg-zinc-800"></div>
+    <main className="h-[calc(100vh-96px)]">
+      <HomeHeader />
+      <HomeCards />
+    </main>
   );
 }

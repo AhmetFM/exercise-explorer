@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="flex h-24 bg-white dark:bg-zinc-950 items-center justify-between px-4 ">
+    <div className="flex h-24 bg-white dark:bg-zinc-950 items-center justify-between px-4">
       <div className="dark:invert flex items-center ">
         <Image
           src="/logo.svg"
