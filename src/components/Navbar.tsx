@@ -10,7 +10,7 @@ const Navbar = () => {
       // className="flex h-24 bg-white dark:bg-zinc-900 items-center justify-between px-4"
     >
       <Link
-        href="/#home"
+        href="/"
         className="dark:invert flex items-center h-20 cursor-pointer"
       >
         <Image
@@ -34,11 +34,14 @@ const Navbar = () => {
           </Link>
           <Link
             className="hover:scale-110 ease-in-out duration-200"
-            href="/#WorkoutPlans"
+            href="/workouts"
           >
             Workout Plans
           </Link>
-          <Link className="hover:scale-110 ease-in-out duration-200" href="/#">
+          <Link
+            className="hover:scale-110 ease-in-out duration-200"
+            href="/#about"
+          >
             About
           </Link>
           <Link className="hover:scale-110 ease-in-out duration-200" href="/#">

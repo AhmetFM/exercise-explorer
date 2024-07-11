@@ -9,7 +9,9 @@ const HomeWorkouts = () => {
       id="WorkoutPlans"
     >
       <h1 className="text-2xl font-bold text-center">Workout Plans</h1>
-      <div className="flex flex-wrap gap-12 items-center justify-center">
+      <div className="flex flex-wrap flex-col md:flex-row gap-12 items-center justify-center">
+        {/* Workout Cards */}
+        <WorkoutCard />
         <WorkoutCard />
         <div
           className="px-4 py-2 border-2 font-medium border-zinc-950 dark:border-white dark:bg-zinc-900 dark:text-white rounded-lg

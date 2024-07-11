@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,11 +26,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div>
+          <div className="relative">
             <Navbar />
-            <div className="w-[100%] m-auto lg:w-[80%] xl:w-[70%]">
+            <div className="w-[100%] m-auto lg:w-[80%] xl:w-[70%] min-h-[calc(100vh-256px)]">
               {children}
             </div>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
