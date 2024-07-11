@@ -3,7 +3,10 @@ import React from "react";
 
 const HomeHeader = () => {
   return (
-    <section className="flex items-center justify-center h-[calc(100vh-96px)] flex-col gap-8 backgroundPhoto text-white ">
+    <section
+      className="flex items-center justify-center min-h-[750px] flex-col gap-8 backgroundPhoto text-white scroll-mt-20"
+      id="home"
+    >
       <div className="flex flex-col items-center justify-center gap-3">
         <h1 className="text-4xl font-bold">Exercise Explorer</h1>
         <p className="text-xl">Transform Your Workout Routine Today</p>

@@ -30,21 +30,34 @@ const HamburgerMenu = () => {
       </div>
 
       {isOpen && (
-        <div className="absolute dark:bg-zinc-950 bg-white left-0 top-24 flex flex-col items-center justify-center w-full h-[calc(100vh-96px)] gap-8 font-medium z-30 text-3xl">
-          <Link className="hover:scale-110 duration-100" href="/about">
-            About
+        <div className="absolute dark:bg-zinc-950 bg-white left-0 top-20 flex flex-col items-center justify-center w-full h-[calc(100vh-80px)] gap-8 font-medium z-30 text-3xl">
+          <Link
+            className="hover:scale-110 duration-100"
+            href="/#features"
+            onClick={() => setIsOpen(false)}
+          >
+            Features
           </Link>
-          <Link className="hover:scale-110 duration-100" href="/about">
-            Services
-          </Link>
-          <Link className="hover:scale-110 duration-100" href="/about">
+          <Link
+            className="hover:scale-110 duration-100"
+            href="/about"
+            onClick={() => setIsOpen(false)}
+          >
             Workout Plans
           </Link>
-          <Link className="hover:scale-110 duration-100" href="/about">
-            Contact
+          <Link
+            className="hover:scale-110 duration-100"
+            href="/about"
+            onClick={() => setIsOpen(false)}
+          >
+            About
           </Link>
-          <Link className="hover:scale-110 duration-100" href="/about">
-            Login
+          <Link
+            className="hover:scale-110 duration-100"
+            href="/about"
+            onClick={() => setIsOpen(false)}
+          >
+            Contact
           </Link>
         </div>
       )}

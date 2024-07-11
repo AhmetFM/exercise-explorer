@@ -1,12 +1,15 @@
+import HomeAbout from "@/components/HomeAbout";
 import HomeCards from "@/components/HomeCards";
 import HomeHeader from "@/components/HomeHeader";
-import Link from "next/link";
+import HomeWorkouts from "@/components/HomeWorkouts";
 
 export default function Home() {
   return (
-    <main className="h-[calc(100vh-96px)]">
+    <main>
       <HomeHeader />
       <HomeCards />
+      <HomeWorkouts />
+      <HomeAbout />
     </main>
   );
 }

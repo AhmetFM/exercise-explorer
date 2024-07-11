@@ -5,8 +5,14 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="flex h-24 bg-white dark:bg-zinc-950 items-center justify-between px-4">
-      <div className="dark:invert flex items-center ">
+    <header
+      className="max-w-screen-2xl container flex items-center justify-between sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      // className="flex h-24 bg-white dark:bg-zinc-900 items-center justify-between px-4"
+    >
+      <Link
+        href="/#home"
+        className="dark:invert flex items-center h-20 cursor-pointer"
+      >
         <Image
           src="/logo.svg"
           alt="logo"
@@ -17,16 +23,27 @@ const Navbar = () => {
         <span className="font-medium text-xl hidden lg:flex dark:text-black">
           ExerciseExplorer
         </span>
-      </div>
+      </Link>
       <div className="hidden md:flex flex-1 justify-end items-center">
         <div className="mr-8 flex gap-4">
-          <Link href="/about">About</Link>
-          <Link href="/about">Services</Link>
-          <Link href="/about">Workout Plans</Link>
-          <Link href="/about">Contact</Link>
-        </div>
-        <div className="dark:bg-slate-100 dark:text-zinc-950 bg-zinc-800 text-white px-3 py-2 rounded-lg">
-          <Link href="/about">Login</Link>
+          <Link
+            className="hover:scale-110 ease-in-out duration-200"
+            href="/#features"
+          >
+            Features
+          </Link>
+          <Link
+            className="hover:scale-110 ease-in-out duration-200"
+            href="/#WorkoutPlans"
+          >
+            Workout Plans
+          </Link>
+          <Link className="hover:scale-110 ease-in-out duration-200" href="/#">
+            About
+          </Link>
+          <Link className="hover:scale-110 ease-in-out duration-200" href="/#">
+            Contact
+          </Link>
         </div>
       </div>
       <div className="flex items-center gap-4 md:ml-4">
@@ -35,7 +52,7 @@ const Navbar = () => {
           <HamburgerMenu />
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

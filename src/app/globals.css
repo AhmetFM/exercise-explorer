@@ -8,3 +8,6 @@
   object-fit: cover;
   background-repeat: no-repeat;
 }
+* {
+  scroll-behavior: smooth;
+}

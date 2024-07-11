@@ -25,9 +25,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="w-[100%] m-auto md:w-[90%] lg:w-[80%] xl:w-[70%]">
+          <div>
             <Navbar />
-            {children}
+            <div className="w-[100%] m-auto lg:w-[80%] xl:w-[70%]">
+              {children}
+            </div>
           </div>
         </ThemeProvider>
       </body>
