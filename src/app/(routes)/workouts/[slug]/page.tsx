@@ -2,7 +2,7 @@
 import { IoMdArrowBack } from "react-icons/io";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
-import WorkoutCard from "@/components/WorkoutCard";
+import SingleWorkoutCard from "@/components/SingleWorkoutCard";
 
 const SingleWorkoutListPage = ({ params }: { params: { slug: string } }) => {
   const pathname = usePathname();
@@ -27,10 +27,10 @@ const SingleWorkoutListPage = ({ params }: { params: { slug: string } }) => {
           <h1 className="text-4xl">{params.slug}</h1>
           <span>We prefer this workout programs for you</span>
         </div>
-        <div className="flex flex-col lg:flex-row gap-8 items-center justify-center">
-          <WorkoutCard activePath={pathname} />
-          <WorkoutCard activePath={pathname} />
-          <WorkoutCard activePath={pathname} />
+        <div className="flex flex-col lg:flex-row gap-8 items-center justify-center ">
+          <SingleWorkoutCard />
+          <SingleWorkoutCard />
+          <SingleWorkoutCard />
         </div>
       </div>
     </div>
