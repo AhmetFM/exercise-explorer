@@ -28,7 +28,7 @@ export default function RootLayout({
         >
           <div className="relative">
             <Navbar />
-            <div className="w-[100%] m-auto lg:w-[80%] xl:w-[70%] min-h-[calc(100vh-256px)]">
+            <div className="w-[100%] m-auto lg:w-[80%] xl:w-[70%] min-h-[calc(100vh-272px)]">
               {children}
             </div>
             <Footer />
