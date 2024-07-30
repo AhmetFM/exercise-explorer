@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-300 dark:bg-zinc-950 w-full h-48 gap-4">
+    <footer className="bg-zinc-300 dark:bg-zinc-950 w-full h-[192px] gap-4 z-50 overflow-hidden">
       <div className="container flex items-center justify-center relative">
         <div className="bg-zinc-800 hidden md:block max-w-3xl w-[80%] absolute top-12 border-b border-b-zinc-950 dark:border-b-white"></div>
         <div className="mt-8 z-10 bg-zinc-300 dark:bg-zinc-950 w-[360px] h-[40px] flex flex-col gap-6">

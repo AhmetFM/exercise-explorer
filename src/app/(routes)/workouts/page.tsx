@@ -1,11 +1,24 @@
 "use client";
 import WorkoutCard from "@/components/WorkoutCard";
+import { dummyData } from "@/lib/data";
 import React from "react";
-import { usePathname } from "next/navigation";
+
+type WorkoutProps = {
+  id: number;
+  pathname: string;
+  title: string;
+  img: string;
+  description: string;
+  child: {
+    id: number;
+    title: string;
+    img: string;
+    description: string;
+  }[];
+}[];
 
 const WorkoutPage = () => {
-  const pathname = usePathname();
-  console.log(pathname);
+  const workouts: WorkoutProps = dummyData;
 
   return (
     <div className="flex flex-col items-center p-8">
@@ -17,14 +30,9 @@ const WorkoutPage = () => {
       </p>
       {/* className="grid gap-6 mt-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3" */}
       <div className="flex flex-wrap gap-6 mt-8 justify-center md:mx-4 xl:mx-0">
-        <WorkoutCard />
-        <WorkoutCard />
-        <WorkoutCard />
-        <WorkoutCard />
-        <WorkoutCard />
-        <WorkoutCard />
-        <WorkoutCard />
-        <WorkoutCard />
+        {workouts.map((workout) => (
+          <WorkoutCard key={workout.id} {...workout} />
+        ))}
       </div>
     </div>
   );

@@ -25,9 +25,7 @@ const HomeAbout = () => {
           <h2 className="text-gray-900 dark:text-white font-medium title-font tracking-wider text-xl">
             AHMET FURKAN MERİÇ
           </h2>
-          <p className="text-gray-500">
-            Frontend Engineer and Professional Athlete
-          </p>
+          {/* <p className="text-gray-500">Frontend Developer</p> */}
         </div>
       </div>
     </section>

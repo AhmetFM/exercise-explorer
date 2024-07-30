@@ -18,6 +18,10 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        "background-light": "url('/photo-light.jpg')",
+        "background-dark": "url('/photo-dark.jpg')",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

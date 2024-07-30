@@ -1,6 +1,8 @@
+import NotFound from "@/app/not-found";
+import DownloadButton from "@/components/DownloadButton";
+import { dummyData } from "@/lib/data";
 import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 const SingleWorkoutPage = ({ params }: { params: { id: number } }) => {
   return (
@@ -35,8 +37,8 @@ const SingleWorkoutPage = ({ params }: { params: { id: number } }) => {
             </div>
           </div>
           {/* Table */}
-          <div className="border rounded-md px-8">
-            <table className="w-full">
+          <div className="border rounded-md px-2 lg:px-8 mb-10">
+            <table className="w-full text-[14px]">
               <tbody>
                 <tr>
                   <th className="text-center">WORKOUT SUMMARY</th>
@@ -70,12 +72,7 @@ const SingleWorkoutPage = ({ params }: { params: { id: number } }) => {
                     Download PDF
                   </td>
                   <td>
-                    <Link
-                      href="/"
-                      className="px-4 py-3 bg-zinc-600 text-white dark:bg-zinc-100 dark:text-zinc-950 font-medium text-sm rounded-lg w-40 text-center self-center"
-                    >
-                      Download PDF
-                    </Link>
+                    <DownloadButton />
                   </td>
                 </tr>
               </tbody>

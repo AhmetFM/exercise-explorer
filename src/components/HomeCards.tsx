@@ -12,7 +12,7 @@ const cardData: CardData[] = [
   {
     step: "Step 1",
     title: "Provide Your Fitness History",
-    desc: "Share your fitness background and health info to help us create a tailored plan for you.",
+    desc: "Share your fitness background to help us create a tailored plan for you.",
     icon: "calendar",
   },
   {
@@ -23,8 +23,8 @@ const cardData: CardData[] = [
   },
   {
     step: "Step 3",
-    title: "Get Your 7-Day Workout Plan",
-    desc: "Receive a customized 7-day workout plan based on your inputs. Let's get moving!",
+    title: "Get Your Workout Plan",
+    desc: "Receive a customized workout plan based on your inputs. Let's get moving!",
     icon: "football",
   },
 ];
@@ -32,12 +32,14 @@ const cardData: CardData[] = [
 const HomeCards = () => {
   return (
     <section
-      className="w-100% h-max  py-20 px-8 flex flex-col items-center"
+      className="w-100% h-max py-20 px-8 flex flex-col items-center"
       id="features"
     >
       <div className="flex flex-col gap-4 mb-12 text-center">
-        <h3 className="text-center text-2xl">Our Features</h3>
-        <span className="text-3xl">
+        <h3 className="text-center text-lg md:text-xl lg:text-2xl">
+          Our Features
+        </h3>
+        <span className="text-xl md:text-2xl lg:text-3xl">
           CREATE A WORKOUT PLAN FOR YOUR WORKOUT BACKGROUND
         </span>
       </div>
