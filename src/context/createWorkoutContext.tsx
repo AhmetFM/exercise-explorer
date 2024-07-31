@@ -5,11 +5,11 @@ const initialWorkoutState: InitialWorkoutStatesType = {
   history: "",
   location: "",
   type: "",
-  date: "",
+  days: "",
   setHistory: () => {},
   setLocation: () => {},
   setType: () => {},
-  setDate: () => {},
+  setDays: () => {},
 };
 
 export const WorkoutContext =
@@ -19,7 +19,7 @@ const WorkoutProvider = ({ children }: { children: React.ReactNode }) => {
   const [history, setHistory] = useState<string>(initialWorkoutState.history);
   const [location, setLocation] = useState<string>(initialWorkoutState.history);
   const [type, setType] = useState<string>(initialWorkoutState.type);
-  const [date, setDate] = useState<string>(initialWorkoutState.date);
+  const [days, setDays] = useState<string>(initialWorkoutState.days);
 
   return (
     <WorkoutContext.Provider
@@ -27,11 +27,11 @@ const WorkoutProvider = ({ children }: { children: React.ReactNode }) => {
         history,
         location,
         type,
-        date,
+        days,
         setHistory,
         setLocation,
         setType,
-        setDate,
+        setDays,
       }}
     >
       {children}

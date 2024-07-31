@@ -1,10 +1,38 @@
-import React from "react";
+"use client";
+import React, { useContext, useEffect } from "react";
+import { useFormState } from "react-dom";
+import { stepTwoFormAction } from "./actions";
+import { WorkoutContext } from "@/context/createWorkoutContext";
+import { redirect } from "next/navigation";
+
+const initialState = {
+  message: "",
+  type: "",
+  days: "",
+};
 
 const StepTwoForm = () => {
+  const [state, formAction] = useFormState(stepTwoFormAction, initialState);
+  const { setType, setDays } = useContext(WorkoutContext);
+
+  useEffect(() => {
+    if (state.message === "Success") {
+      setType(state.type);
+      setDays(state.days);
+      redirect("/step-three");
+    }
+  }, [state, setType, setDays]);
+
   return (
-    <form className="flex items-center justify-center flex-col h-full select-none lg:mx-8">
+    <form
+      action={formAction}
+      className="flex items-center justify-center flex-col h-full select-none lg:mx-8"
+    >
       <div className="lg:border p-20 flex flex-col gap-12 rounded-lg">
         <div className="flex flex-col gap-2 border-b pb-8">
+          {state.message !== "Success" && (
+            <p className="text-red-500">{state.message}</p>
+          )}
           <label htmlFor="type">
             Which types of exercise do you enjoy the most?
           </label>
@@ -39,10 +67,10 @@ const StepTwoForm = () => {
             <option disabled value="">
               Select One
             </option>
-            <option value="newbie">1-2 days</option>
-            <option value="beginner">3-4 days</option>
-            <option value="intermediate">5-6 days</option>
-            <option value="advanced">Every day</option>
+            <option value="low">1-2 days</option>
+            <option value="normal">3-4 days</option>
+            <option value="hard">5-6 days</option>
+            <option value="extreme">Every day</option>
           </select>
         </div>
         <button className="bg-zinc-700 dark:bg-black text-white p-2 rounded-md">
