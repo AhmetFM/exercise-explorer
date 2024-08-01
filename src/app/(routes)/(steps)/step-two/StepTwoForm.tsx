@@ -46,10 +46,10 @@ const StepTwoForm = () => {
             <option disabled value="">
               Select One
             </option>
-            <option value="muscle">Muscle building</option>
-            <option value="full">Full Body</option>
+            <option value="muscle-building">Muscle building</option>
+            <option value="full-body">Full Body</option>
             <option value="strength">Increase Strength</option>
-            <option value="sport">Sport Perfomance</option>
+            <option value="for-sport">Sport Perfomance</option>
             <option value="bodyweight">Bodyweight</option>
           </select>
         </div>
@@ -67,10 +67,10 @@ const StepTwoForm = () => {
             <option disabled value="">
               Select One
             </option>
-            <option value="low">1-2 days</option>
-            <option value="normal">3-4 days</option>
-            <option value="hard">5-6 days</option>
-            <option value="extreme">Every day</option>
+            <option value="two-day">1-2 days</option>
+            <option value="three-or-four-day">3-4 days</option>
+            <option value="five-or-six-day">5-6 days</option>
+            <option value="every-day">Every day</option>
           </select>
         </div>
         <button className="bg-zinc-700 dark:bg-black text-white p-2 rounded-md">

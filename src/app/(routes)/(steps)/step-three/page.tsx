@@ -3,7 +3,7 @@ import StepThree from "./StepThree";
 
 const StepThreePage = () => {
   return (
-    <div className="flex-1 h-[70vh] overflow-hidden">
+    <div className="flex-1 min-h-[70vh]">
       <StepThree />
     </div>
   );

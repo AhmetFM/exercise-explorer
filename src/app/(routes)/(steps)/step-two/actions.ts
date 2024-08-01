@@ -7,8 +7,19 @@ export const stepTwoFormAction = (prevState: any, formData: FormData) => {
   const data = Object.fromEntries(formData.entries());
 
   const stepTwoSchema = z.object({
-    type: z.enum(["muscle", "full", "strength", "sport", "bodyweight"]),
-    days: z.enum(["low", "normal", "hard", "extreme"]),
+    type: z.enum([
+      "muscle-building",
+      "full-body",
+      "strength",
+      "for-sport",
+      "bodyweight",
+    ]),
+    days: z.enum([
+      "two-day",
+      "three-or-four-day",
+      "five-or-six-day",
+      "every-day",
+    ]),
   });
 
   const validated = stepTwoSchema.safeParse(data);

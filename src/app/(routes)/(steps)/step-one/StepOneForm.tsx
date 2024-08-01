@@ -47,10 +47,10 @@ const StepOneForm = () => {
             <option disabled value="">
               Select One
             </option>
-            <option value="newbie">Less than 3 months</option>
-            <option value="beginner">3-6 months</option>
-            <option value="intermediate">6 months - 1 year</option>
-            <option value="advanced">Over a year</option>
+            <option value="new">Less than 3 months</option>
+            <option value="three-months">3-6 months</option>
+            <option value="six-months">6 months - 1 year</option>
+            <option value="one-year">Over a year</option>
           </select>
         </div>
         <div className="flex flex-col gap-2 border-b pb-8">

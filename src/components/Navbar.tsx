@@ -8,14 +8,14 @@ const Navbar = () => {
     <header className="max-w-screen-2xl container flex items-center justify-between sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <Link
         href="/"
-        className="dark:invert flex items-center h-16 lg:h-20 cursor-pointer"
+        className="dark:invert flex items-center h-20 cursor-pointer"
       >
         <Image
           src="/logo.svg"
           alt="logo"
           width={48}
           height={48}
-          className="w-10 h-10 lg:w-12 lg:h-12"
+          className="w-12 h-12"
         />
         <span className="font-medium text-xl hidden lg:flex dark:text-black">
           ExerciseExplorer

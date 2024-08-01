@@ -40,7 +40,6 @@ const HomeContact = () => {
     }
   }, [state]);
 
-  console.log(form);
   return (
     <div
       className="flex flex-col items-center justify-center mb-12 md:mb-6 lg:mb-2 container relative min-h-[75vh]"

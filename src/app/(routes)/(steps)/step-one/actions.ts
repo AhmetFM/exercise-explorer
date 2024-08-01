@@ -6,7 +6,7 @@ import { z } from "zod";
 export const stepOneFormAction = (prevState: any, formData: FormData) => {
   const data = Object.fromEntries(formData.entries());
   const stepOneSchema = z.object({
-    history: z.enum(["newbie", "beginner", "intermediate", "advanced"]),
+    history: z.enum(["new", "three-months", "six-months", "one-year"]),
     location: z.enum(["home", "gym", "outdoor"]),
   });
 
