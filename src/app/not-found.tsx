@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <div className="w-full flex flex-col items-center justify-center h-[80vh] gap-2">
       <h2 className="text-2xl mb-8">404: Page Not Found</h2>
-      <p>Sorry, the page you're looking for doesn't exist.</p>
+      <p>Sorry, the page you&apos;re looking for doesn&apos;t exist.</p>
       <span>
         The page may have been removed, moved, or is temporarily unavailable.
       </span>
