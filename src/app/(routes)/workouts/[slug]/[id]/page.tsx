@@ -79,7 +79,7 @@ const SingleWorkoutPage = ({ params }: { params: { id: number } }) => {
                   <td className="italic text-gray-600 dark:text-gray-200">
                     Download PDF
                   </td>
-                  <td>
+                  <td className="min-w-[150px]">
                     <DownloadButton />
                   </td>
                 </tr>
