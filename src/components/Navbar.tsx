@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <header className="max-w-screen-2xl container flex items-center justify-between sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <Link
-        href="/"
+        href="/#home"
         className="dark:invert flex items-center h-20 cursor-pointer"
       >
         <Image
@@ -41,7 +41,10 @@ const Navbar = () => {
           >
             About
           </Link>
-          <Link className="hover:scale-110 ease-in-out duration-200" href="/#">
+          <Link
+            className="hover:scale-110 ease-in-out duration-200"
+            href="/#contact"
+          >
             Contact
           </Link>
         </div>

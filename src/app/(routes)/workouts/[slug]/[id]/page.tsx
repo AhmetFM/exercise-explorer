@@ -1,10 +1,22 @@
+"use client";
 import NotFound from "@/app/not-found";
 import DownloadButton from "@/components/DownloadButton";
 import { dummyData } from "@/lib/data";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import React from "react";
 
 const SingleWorkoutPage = ({ params }: { params: { id: number } }) => {
+  const pathname = usePathname();
+  const parent = pathname.split("/")[2];
+
+  const workouts = dummyData.find((item) => item.pathname === parent);
+  const singleWorkout = workouts?.child.find(
+    (item) => item.id === Number(params.id)
+  );
+
+  if (!singleWorkout) return <NotFound />;
+
   return (
     <div className="flex flex-col items-center min-h-[50vh]">
       <div className="container mt-8">
@@ -15,31 +27,27 @@ const SingleWorkoutPage = ({ params }: { params: { id: number } }) => {
             <div className="flex flex-col flex-1 items-center gap-8">
               <div>
                 <Image
-                  src="https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src={singleWorkout.img}
                   alt=""
                   width={400}
                   height={400}
-                  className="object-contain"
+                  className="object-contain max-w-[600px] max-h-[400px]"
                 />
               </div>
             </div>
             {/* Description */}
             <div className="flex flex-col flex-1 gap-12 justify-center">
               <h1 className="text-3xl font-bold text-center md:text-start">
-                Workout Title
+                {singleWorkout.title}
               </h1>
-              <p className="text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-                omnis amet minima culpa aperiam, blanditiis eveniet aliquam,
-                soluta veniam aspernatur tempora consequuntur nihil cumque
-                consectetur, facilis odit velit? Sed, ullam.
-              </p>
+              <p className="text-lg">{singleWorkout.description}</p>
             </div>
           </div>
           {/* Table */}
           <div className="border rounded-md px-2 lg:px-8 mb-10">
             <table className="w-full text-[14px]">
               <tbody>
+                {/* THIS TABLE IS HARDCODED BECAUSE THIS WEBSITE IS EDUCATIONAL ONLY. NOT ANYTHING ELSE */}
                 <tr>
                   <th className="text-center">WORKOUT SUMMARY</th>
                 </tr>

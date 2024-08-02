@@ -43,21 +43,21 @@ const HamburgerMenu = () => {
           </Link>
           <Link
             className="hover:scale-110 duration-100"
-            href="/about"
+            href="/workouts"
             onClick={() => setIsOpen(false)}
           >
             Workout Plans
           </Link>
           <Link
             className="hover:scale-110 duration-100"
-            href="/about"
+            href="/#about"
             onClick={() => setIsOpen(false)}
           >
             About
           </Link>
           <Link
             className="hover:scale-110 duration-100"
-            href="/about"
+            href="/#contact"
             onClick={() => setIsOpen(false)}
           >
             Contact

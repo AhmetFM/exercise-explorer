@@ -15,7 +15,7 @@ const Footer = () => {
           {/* LINKS */}
           <div className="flex gap-4 justify-center items-center">
             <Link
-              href="/"
+              href="https://www.instagram.com/ahmeetmeric/"
               className="hover:bg-zinc-100 dark:hover:bg-zinc-800 w-10 h-10 rounded-full flex items-center justify-center duration-300"
             >
               <FaInstagram
@@ -25,7 +25,7 @@ const Footer = () => {
               />
             </Link>
             <Link
-              href="/"
+              href="https://www.linkedin.com/in/ahmet-furkan-meric/"
               className="hover:bg-zinc-100 dark:hover:bg-zinc-800 w-10 h-10 rounded-full flex items-center justify-center duration-300"
             >
               <FaLinkedin
@@ -35,19 +35,19 @@ const Footer = () => {
               />
             </Link>
             <Link
-              href="/"
+              href="https://github.com/AhmetFM"
               className="hover:bg-zinc-100 dark:hover:bg-zinc-800 w-10 h-10 rounded-full flex items-center justify-center duration-300"
             >
               <FaGithub width={24} height={24} className="w-[24px] h-[24px]" />
             </Link>
             <Link
-              href="/"
+              href="mailto:afurkanmeric@gmail.com"
               className="hover:bg-zinc-100 dark:hover:bg-zinc-800 w-10 h-10 rounded-full flex items-center justify-center duration-300"
             >
               <IoIosMail width={24} height={24} className="w-[24px] h-[24px]" />
             </Link>
             <Link
-              href="/"
+              href="https://meric-three.vercel.app/"
               className="hover:bg-zinc-100 dark:hover:bg-zinc-800 w-10 h-10 rounded-full flex items-center justify-center duration-300"
             >
               <TbWorld width={24} height={24} className="w-[24px] h-[24px]" />
@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col items-center justify-center gap-2 pb-4">
             <Link
-              href="/#home"
+              href="/"
               className="dark:invert flex items-center cursor-pointer "
             >
               <Image
