@@ -19,7 +19,7 @@ const SingleWorkoutPage = ({ params }: { params: { id: number } }) => {
 
   return (
     <div className="flex flex-col items-center min-h-[50vh]">
-      <div className="container mt-8">
+      <div className="container px-3 lg:px-8 mt-8">
         <div className="flex flex-col gap-12">
           {/* Image And Description */}
           <div className="flex flex-col justify-center md:flex-row gap-4">
@@ -44,47 +44,87 @@ const SingleWorkoutPage = ({ params }: { params: { id: number } }) => {
             </div>
           </div>
           {/* Table */}
-          <div className="border rounded-md px-2 lg:px-8 mb-10">
-            <table className="w-full text-[14px]">
+          <div className="border rounded-md mb-10 px-4 lg:px-8 py-3">
+            <table className="w-full text-[14px] ">
               <tbody>
-                {/* THIS TABLE IS HARDCODED BECAUSE THIS WEBSITE IS EDUCATIONAL ONLY. NOT ANYTHING ELSE */}
                 <tr>
-                  <th className="text-center">WORKOUT SUMMARY</th>
+                  <th colSpan={2} className="text-center">
+                    WORKOUT SUMMARY
+                  </th>
                 </tr>
                 <tr className="border-b border-black dark:border-white border-opacity-10 dark:border-opacity-10">
                   <td className="italic text-gray-600 dark:text-gray-200">
                     Main Goal
                   </td>
-                  <td>Build Muscle</td>
+                  <td>{singleWorkout.goal}</td>
                 </tr>
                 <tr className="border-b border-black dark:border-white border-opacity-10 dark:border-opacity-10">
                   <td className="italic text-gray-600 dark:text-gray-200">
                     Workout Type
                   </td>
-                  <td>Split</td>
+                  <td>{singleWorkout.type}</td>
                 </tr>
                 <tr className="border-b border-black dark:border-white border-opacity-10 dark:border-opacity-10">
                   <td className="italic text-gray-600 dark:text-gray-200">
                     Program Duration
                   </td>
-                  <td>12 Weeks</td>
+                  <td>{singleWorkout.duration}</td>
                 </tr>
                 <tr className="border-b border-black dark:border-white border-opacity-10 dark:border-opacity-10">
                   <td className="italic text-gray-600 dark:text-gray-200">
                     Days Per Week
                   </td>
-                  <td>5</td>
+                  <td>{singleWorkout.daysPerWeek}</td>
                 </tr>
-                <tr className="border-b h-20 border-black dark:border-white border-opacity-10 dark:border-opacity-10">
+                {/* <tr className="border-b h-20 border-black dark:border-white border-opacity-10 dark:border-opacity-10">
                   <td className="italic text-gray-600 dark:text-gray-200">
                     Download PDF
                   </td>
                   <td className="min-w-[150px]">
                     <DownloadButton />
                   </td>
-                </tr>
+                </tr> */}
               </tbody>
             </table>
+          </div>
+          {/* Workout Program */}
+          <div className="flex flex-col gap-8 mb-20">
+            <span className="font-bold text-2xl text-center">
+              {singleWorkout.shortTitle}
+            </span>
+            {singleWorkout.days?.map((item, index) => (
+              <div key={index}>
+                <h2 className="text-2xl font-bold">{item.title}</h2>
+                <table className="w-full text-[14px] md:text-[16px]">
+                  <tbody>
+                    <tr className="border-b border-black dark:border-white border-opacity-10 dark:border-opacity-10">
+                      {item.headers.map((header, index) => (
+                        <th
+                          key={index}
+                          scope="col"
+                          className="text-start text-lg py-1"
+                        >
+                          {header}
+                        </th>
+                      ))}
+                    </tr>
+                    {item.exercises.map((exercise, index) => (
+                      <tr
+                        key={index}
+                        className={`border-b border-black dark:border-white border-opacity-10 dark:border-opacity-10 ${
+                          index % 2 == 0 ? "bg-zinc-100 dark:bg-zinc-900" : ""
+                        }`}
+                      >
+                        <td className="flex-1 py-2 max-w-36">{exercise[0]}</td>
+                        <td className="flex-1 py-2">{exercise[1]}</td>
+                        <td className="flex-1 py-2">{exercise[2]}</td>
+                        <td className="flex-1 py-2">{exercise[3]}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ))}
           </div>
         </div>
       </div>
