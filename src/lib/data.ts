@@ -1,3 +1,11 @@
+export const AdminUsers = [
+  {
+    username: "admin",
+    password: "admin",
+    isAdmin: "true",
+  },
+];
+
 export const dummyData = [
   {
     id: 1,
