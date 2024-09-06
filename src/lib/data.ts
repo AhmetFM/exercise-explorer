@@ -67,7 +67,7 @@ export const AdminUsers = [
 //       },
 //       {
 //         id: 12,
-//         slug: "ppl",
+//         slug: "5-day-dumble",
 //         goal: "Build Muscle",
 //         type: "Split",
 //         duration: "12 Weeks",
@@ -115,7 +115,7 @@ export const AdminUsers = [
 //       },
 //       {
 //         id: 13,
-//         slug: "ppl",
+//         slug: "5-day-strength",
 //         goal: "Build Muscle",
 //         type: "Split",
 //         duration: "12 Weeks",
@@ -173,7 +173,7 @@ export const AdminUsers = [
 //     workouts: [
 //       {
 //         id: 21,
-//         slug: "ppl",
+//         slug: "8-week-advanced",
 //         goal: "Build Muscle",
 //         type: "Split",
 //         duration: "12 Weeks",
@@ -221,7 +221,7 @@ export const AdminUsers = [
 //       },
 //       {
 //         id: 22,
-//         slug: "ppl",
+//         slug: "dumbell-split",
 //         goal: "Build Muscle",
 //         type: "Split",
 //         duration: "12 Weeks",
@@ -269,7 +269,7 @@ export const AdminUsers = [
 //       },
 //       {
 //         id: 23,
-//         slug: "ppl",
+//         slug: "muscle-and-strength",
 //         goal: "Build Muscle",
 //         type: "Split",
 //         duration: "12 Weeks",
@@ -944,7 +944,7 @@ export const AdminUsers = [
 //     workouts: [
 //       {
 //         id: 71,
-//         slug: "ppl",
+//         slug: "workout-for-beginners",
 //         goal: "Build Muscle",
 //         type: "Split",
 //         duration: "12 Weeks",
@@ -992,7 +992,7 @@ export const AdminUsers = [
 //       },
 //       {
 //         id: 72,
-//         slug: "ppl",
+//         slug: "advanced-workout-8-week",
 //         goal: "Build Muscle",
 //         type: "Split",
 //         duration: "12 Weeks",
@@ -1040,7 +1040,7 @@ export const AdminUsers = [
 //       },
 //       {
 //         id: 73,
-//         slug: "ppl",
+//         slug: "split-muscle-workout",
 //         goal: "Build Muscle",
 //         type: "Split",
 //         duration: "12 Weeks",
@@ -1098,7 +1098,7 @@ export const AdminUsers = [
 //     workouts: [
 //       {
 //         id: 81,
-//         slug: "ppl",
+//         slug: "push-pull-leg-workout",
 //         goal: "Build Muscle",
 //         type: "Split",
 //         duration: "12 Weeks",
@@ -1146,7 +1146,7 @@ export const AdminUsers = [
 //       },
 //       {
 //         id: 82,
-//         slug: "ppl",
+//         slug: "advanced-str-building",
 //         goal: "Build Muscle",
 //         type: "Split",
 //         duration: "12 Weeks",
@@ -1194,7 +1194,7 @@ export const AdminUsers = [
 //       },
 //       {
 //         id: 83,
-//         slug: "ppl",
+//         slug: "5-day-muscle-strength",
 //         goal: "Build Muscle",
 //         type: "Split",
 //         duration: "12 Weeks",

@@ -4,7 +4,12 @@ import Link from "next/link";
 import prisma from "@/lib/db";
 
 const HomeWorkouts = async () => {
-  const workoutForHomePage = await prisma.plan.findMany();
+  const workoutForHomePage = await prisma.plan.findMany({
+    orderBy: {
+      id: "asc",
+    },
+    take: 3,
+  });
 
   return (
     <section

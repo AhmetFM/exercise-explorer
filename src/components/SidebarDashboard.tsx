@@ -17,7 +17,7 @@ const SidebarDashboard = ({ items }: SidebarDashboardProps) => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex space-x-2 lg:flex-col lg:space-x lg:space-y-1">
+    <nav className="flex lg:flex-col lg:space-x lg:space-y-1">
       {items.map((item) => (
         <Link
           href={item.href}
@@ -27,7 +27,7 @@ const SidebarDashboard = ({ items }: SidebarDashboardProps) => {
             pathname === item.href
               ? "bg-zinc-700 hover:bg-zinc-700"
               : "hover:bg-transparent hover:underline",
-            "justify-start"
+            "justify-start text-wrap w-full"
           )}
         >
           {item.title}

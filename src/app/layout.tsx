@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
         >
           <div className="relative">
             <Navbar />
+            <Toaster />
             <div className="w-[100%] m-auto lg:w-[80%] xl:w-[70%] min-h-[calc(100vh-272px)]">
               {children}
             </div>
