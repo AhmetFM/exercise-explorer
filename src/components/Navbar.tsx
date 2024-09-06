@@ -24,6 +24,12 @@ const Navbar = () => {
       <div className="hidden md:flex flex-1 justify-end items-center">
         <div className="mr-8 flex gap-4">
           <Link
+            className="hover:scale-110 ease-in-out duration-200 underline underline-offset-[6px]"
+            href="/admin"
+          >
+            Admin
+          </Link>
+          <Link
             className="hover:scale-110 ease-in-out duration-200"
             href="/#features"
           >

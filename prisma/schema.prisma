@@ -1,14 +1,56 @@
-// // This is your Prisma schema file,
-// // learn more about it in the docs: https://pris.ly/d/prisma-schema
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
-// generator client {
-//   provider = "prisma-client-js"
-// }
+datasource db {
+    provider = "mongodb"
+    url      = env("DATABASE_URL")
+}
 
-// datasource db {
-//   provider = "postgresql"
-//   url      = env("DATABASE_URL")
-// }
+generator client {
+    provider = "prisma-client-js"
+}
+
+model User {
+    id       String   @id @default(auto()) @map("_id") @db.ObjectId
+    name     String
+    username String   @unique
+    password String
+    isAdmin  Boolean? @default(true)
+}
+
+model Plan {
+    id       String    @id @default(auto()) @map("_id") @db.ObjectId
+    slug     String    @unique
+    title    String
+    desc     String
+    img      String?
+    workouts Workout[]
+}
+
+model Workout {
+    id          String  @id @default(auto()) @map("_id") @db.ObjectId
+    slug        String  @unique
+    title       String
+    goal        String
+    type        String
+    duration    String
+    daysPerWeek String
+    img         String
+    description String
+    shortTitle  String
+    days        Day[]
+    Plan        Plan?   @relation(fields: [planId], references: [id])
+    planId      String? @db.ObjectId
+}
+
+model Day {
+    id        String   @id @default(auto()) @map("_id") @db.ObjectId
+    title     String
+    headers   String[]
+    exercises String[]
+    Workout   Workout? @relation(fields: [workoutId], references: [id])
+    workoutId String?  @db.ObjectId
+}

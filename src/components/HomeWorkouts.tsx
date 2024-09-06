@@ -1,10 +1,15 @@
 import React from "react";
 import WorkoutCard from "./WorkoutCard";
 import Link from "next/link";
-import { dummyData } from "@/lib/data";
+import prisma from "@/lib/db";
 
-const HomeWorkouts = () => {
-  const workoutForHomePage = dummyData.slice(0, 3);
+const HomeWorkouts = async () => {
+  const workoutForHomePage = await prisma.plan.findMany({
+    orderBy: {
+      id: "asc",
+    },
+    take: 3,
+  });
 
   return (
     <section

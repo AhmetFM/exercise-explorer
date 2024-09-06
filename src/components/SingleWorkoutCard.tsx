@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 type SingleWorkoutCardProps = {
-  id: number;
+  slug: string;
   title: string;
   img: string;
   description: string;
@@ -11,7 +11,7 @@ type SingleWorkoutCardProps = {
 };
 
 const SingleWorkoutCard = ({
-  id,
+  slug,
   title,
   img,
   description,
@@ -40,7 +40,7 @@ const SingleWorkoutCard = ({
         </p>
       </div>
       <Link
-        href={`/workouts/${path}/${id}`}
+        href={`/workouts/${path}/${slug}`}
         className="px-3 py-4 bg-zinc-700 text-white self-center rounded-lg hover:scale-105 duration-200"
       >
         View Workout

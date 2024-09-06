@@ -1,24 +1,28 @@
-"use client";
 import WorkoutCard from "@/components/WorkoutCard";
-import { dummyData } from "@/lib/data";
+import prisma from "@/lib/db";
 import React from "react";
 
-type WorkoutProps = {
-  id: number;
-  pathname: string;
-  title: string;
-  img: string;
-  description: string;
-  child: {
-    id: number;
-    title: string;
-    img: string;
-    description: string;
-  }[];
-}[];
+// type WorkoutProps = {
+//   id: number;
+//   slug: string;
+//   title: string;
+//   img: string;
+//   description: string;
+//   workouts: {
+//     id: number;
+//     title: string;
+//     img: string;
+//     description: string;
+//   }[];
+// }[];
 
-const WorkoutPage = () => {
-  const workouts: WorkoutProps = dummyData;
+const WorkoutPage = async () => {
+  // const workouts: WorkoutProps = dummyData;
+  const workouts = await prisma.plan.findMany({
+    include: {
+      workouts: true,
+    },
+  });
 
   return (
     <div className="flex flex-col items-center p-8">
