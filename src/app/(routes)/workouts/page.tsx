@@ -5,11 +5,11 @@ import React from "react";
 
 type WorkoutProps = {
   id: number;
-  pathname: string;
+  slug: string;
   title: string;
   img: string;
   description: string;
-  child: {
+  workouts: {
     id: number;
     title: string;
     img: string;

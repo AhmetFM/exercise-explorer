@@ -3,31 +3,22 @@ import Link from "next/link";
 import React from "react";
 
 type WorkoutProps = {
-  id: number;
-  pathname: string;
+  id: string;
+  slug: string;
   title: string;
-  img: string;
-  description: string;
-  child: {
-    id: number;
-    title: string;
-    img: string;
-    description: string;
-  }[];
+  desc: string;
+  img: string | null;
 };
 
 const WorkoutCard = (workout: WorkoutProps) => {
   return (
     // I need image url and title as a prop
     //Responsive card
-    <Link
-      href={`/workouts/${workout.pathname}/`}
-      className="w-72 h-56 relative"
-    >
+    <Link href={`/workouts/${workout.slug}/`} className="w-72 h-56 relative">
       <Image
         className="-z-40 opacity-100 dark:opacity-85 object-cover"
         alt=""
-        src={workout.img}
+        src={`${workout.img}`}
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
       />
