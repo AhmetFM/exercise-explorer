@@ -1,15 +1,18 @@
-import { AdminUsers } from "@/lib/data";
+"use server";
+import { getUser } from "@/lib/data";
+import { createSession } from "@/lib/session";
 import { z } from "zod";
 
-export const handleSubmit = (prevState: any, formData: FormData) => {
-  const data = Object.fromEntries(formData);
+export const handleSubmit = async (prevState: any, formData: FormData) => {
+  const username = formData.get("username") as string;
+  const password = formData.get("password") as string;
 
   const LoginSchema = z.object({
     username: z.string().min(4, "Username must be at least 4 characters long"),
     password: z.string().min(4, "Password must be at least 4 characters long"),
   });
 
-  const validated = LoginSchema.safeParse(data);
+  const validated = LoginSchema.safeParse({ username, password });
   if (!validated.success) {
     const errors = validated.error?.issues.reduce(
       (acc: any, curr: any) => ({
@@ -22,8 +25,10 @@ export const handleSubmit = (prevState: any, formData: FormData) => {
       errors,
     };
   } else {
-    const user = AdminUsers.find((user) => user.username === data.username);
-    if (user && user.password === data.password) {
+    const user = await getUser(username);
+    if (user && user.password === password) {
+      await createSession(user.id);
+      console.log(user.id);
       return {
         success: true,
         user,

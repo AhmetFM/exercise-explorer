@@ -1,3 +1,5 @@
+import prisma from "./db";
+
 export const AdminUsers = [
   {
     username: "admin",
@@ -1241,3 +1243,12 @@ export const dummyData = [
     ],
   },
 ];
+
+export const getUser = async (username: string) => {
+  const user = await prisma.user.findUnique({
+    where: {
+      username: username,
+    },
+  });
+  return user;
+};

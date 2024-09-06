@@ -10,13 +10,12 @@ const initialState = {
 };
 
 const LoginForm = () => {
-  const [state, formAction] = useFormState(handleSubmit, initialState);
+  const [state, formAction, pending] = useFormState(handleSubmit, initialState);
   const { setUser } = useContext(AdminContext);
 
   useEffect(() => {
     if (state?.success) {
       setUser(state.user);
-      console.log(state.user);
       redirect("/admin/dashboard");
     }
   }, [setUser, state]);
@@ -61,8 +60,11 @@ const LoginForm = () => {
           </p>
         )}
       </div>
-      <button className="w-full bg-zinc-300 px-3 py-2 rounded-md font-medium dark:bg-zinc-800 border-2 border-zinc-950/75 hover:border-zinc-300 dark:border-white/75 dark:hover:border-zinc-800 duration-300">
-        Login
+      <button
+        disabled={pending}
+        className="w-full bg-zinc-300 px-3 py-2 rounded-md font-medium dark:bg-zinc-800 border-2 border-zinc-950/75 hover:border-zinc-300 dark:border-white/75 dark:hover:border-zinc-800 duration-300"
+      >
+        {pending ? "Loading..." : "Login"}
       </button>
     </form>
   );
