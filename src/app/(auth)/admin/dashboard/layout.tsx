@@ -20,6 +20,11 @@ const sidebarNavItems = [
     icon: "create-workout",
     href: "/admin/dashboard/create-workout",
   },
+  {
+    title: "Create a Program for Workout",
+    icon: "create-program",
+    href: "/admin/dashboard/create-program",
+  },
 ];
 
 export default function DashboardLayout({

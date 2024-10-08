@@ -9,7 +9,10 @@ import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Exercise Explorer",
+  title: {
+    default: "Exercise Explorer",
+    template: "%s | Exercise Explorer",
+  },
   description:
     "Exercise Explorer is a website for finding exercise routines for different fitness goals.",
 };
