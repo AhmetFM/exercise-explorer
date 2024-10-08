@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
 import model from "./actions";
 import jsPDF, { AcroFormField } from "jspdf";
+import autoTable from "jspdf-autotable";
 
 type DataType = {
   day: string;
@@ -73,12 +74,42 @@ const StepThree = () => {
     }
   }, [returnedText]);
 
-  // const handleDownload = () => {
-  //   const doc = new jsPDF();
+  const handleDownload = () => {
+    if (!data) return;
 
-  //   // doc.save("workout-plan.pdf");
-  //   console.log("downloaded");
-  // };
+    const doc = new jsPDF();
+    doc.setFontSize(20);
+    doc.text("Workout Plan", 14, 15);
+    doc.setFontSize(12);
+
+    let yOffset = 25;
+
+    data.forEach((day, index) => {
+      doc.text(day.day, 14, yOffset);
+      yOffset += 10;
+
+      const tableData = day.exercises.map((exercise) => [
+        exercise.name,
+        exercise.sets,
+        exercise.reps,
+      ]);
+
+      autoTable(doc, {
+        head: [["Exercise", "Sets", "Reps"]],
+        body: tableData,
+        startY: yOffset,
+      });
+
+      yOffset = (doc as any).lastAutoTable.finalY + 15;
+
+      if (yOffset > 270 && index < data.length - 1) {
+        doc.addPage();
+        yOffset = 15;
+      }
+    });
+
+    doc.save("workout-plan.pdf");
+  };
 
   if (error) {
     return (
@@ -138,9 +169,9 @@ const StepThree = () => {
                   <tbody>
                     {day.exercises.map((exercise, j) => (
                       <tr key={j}>
-                        <td className="text-left">{exercise.name}</td>
+                        <td className="text-left text-wrap">{exercise.name}</td>
                         <td className="text-center">{exercise.sets}</td>
-                        <td className="text-center min-w-20 max-w-32">
+                        <td className="text-center min-w-20 max-w-32 text-wrap">
                           {exercise.reps}
                         </td>
                       </tr>
@@ -151,12 +182,14 @@ const StepThree = () => {
             ))}
           </div>
 
-          {/* <button
-            onClick={handleDownload}
-            className="px-3 py-2 border-2 rounded-full border-zinc-950 dark:border-white hover:border-zinc-200 dark:hover:border-zinc-900 duration-300"
-          >
-            Download Program
-          </button> */}
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={handleDownload}
+              className="px-3 py-2 border-2 rounded-full border-zinc-950 dark:border-white hover:border-zinc-200 dark:hover:border-zinc-900 duration-300"
+            >
+              Download Program
+            </button>
+          </div>
         </div>
       )}
     </div>

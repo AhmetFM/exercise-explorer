@@ -24,7 +24,7 @@ const steps = [
 const StepNavigation = () => {
   const pathname = usePathname();
   const currentPath = pathname.replace("/", "");
-  const [currentStep, setCurrentStep] = useState(1);
+  // const [currentStep, setCurrentStep] = useState(1);
 
   return (
     <div className="flex items-center">
