@@ -2,6 +2,7 @@ import LogoutButton from "@/components/LogoutButton";
 import SidebarDashboard from "@/components/SidebarDashboard";
 import { Separator } from "@/components/ui/separator";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -36,7 +37,12 @@ export default function DashboardLayout({
     <div className="space-y-6 p-10 pb-16">
       <div className="space-y-0.5 flex items-center justify-between">
         <div>
-          <h2 className="text-2xl font-bold tracking-tight">Dashboard</h2>
+          <Link
+            className="text-2xl font-bold tracking-tight"
+            href="/admin/dashboard"
+          >
+            Dashboard
+          </Link>
           <p className="text-gray-400">Welcome to your dashboard</p>
         </div>
         <LogoutButton />

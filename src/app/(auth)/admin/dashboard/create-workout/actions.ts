@@ -1,5 +1,7 @@
 "use server";
+import { getUserByToken } from "@/lib/data";
 import prisma from "@/lib/db";
+import { verifySession } from "@/lib/session";
 import { revalidatePath } from "next/cache";
 import toast from "react-hot-toast";
 import { z } from "zod";
@@ -14,6 +16,17 @@ export const getPlans = async () => {
 };
 
 export async function createWorkout(prevState: any, formData: FormData) {
+  const session = await verifySession();
+  const user = await getUserByToken(session?.userId);
+
+  if (!user?.isAdmin) {
+    return {
+      errors: {
+        user: "You are not authorized to create a plan",
+      },
+    };
+  }
+
   const title = formData.get("title") as string;
   const slug = formData.get("slug") as string;
   const desc = formData.get("desc") as string;

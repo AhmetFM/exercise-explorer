@@ -3,22 +3,38 @@ import { handleSubmit } from "@/app/(auth)/admin/login/actions";
 import { AdminContext } from "@/context/AdminContext";
 import { redirect } from "next/navigation";
 import React, { useContext, useEffect } from "react";
-import { useFormState } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 
 const initialState = {
   errors: {},
 };
 
+const Button = () => {
+  const { pending } = useFormStatus();
+  return (
+    <button
+      disabled={pending}
+      className="w-full disabled:cursor-not-allowed disabled:opacity-40 bg-zinc-300 px-3 py-2 rounded-md font-medium dark:bg-zinc-800 border-2 border-zinc-950/75 hover:border-zinc-300 dark:border-white/75 dark:hover:border-zinc-800 duration-300"
+    >
+      {pending ? "Loading..." : "Login"}
+    </button>
+  );
+};
+
 const LoginForm = () => {
-  const [state, formAction, pending] = useFormState(handleSubmit, initialState);
+  const [state, formAction] = useFormState(handleSubmit, initialState);
   const { setUser } = useContext(AdminContext);
 
-  useEffect(() => {
-    if (state?.success) {
-      setUser(state.user);
-      redirect("/admin/dashboard");
-    }
-  }, [setUser, state]);
+  // useEffect(() => {
+  //   if (state.success) {
+  //     setUser((prev: any) => ({
+  //       username: state.user.username,
+  //       password: state.user.password,
+  //       isAdmin: state.user.isAdmin,
+  //     }));
+  //     redirect("/admin/dashboard");
+  //   }
+  // }, [setUser, state]);
 
   return (
     <form
@@ -60,12 +76,7 @@ const LoginForm = () => {
           </p>
         )}
       </div>
-      <button
-        disabled={pending}
-        className="w-full bg-zinc-300 px-3 py-2 rounded-md font-medium dark:bg-zinc-800 border-2 border-zinc-950/75 hover:border-zinc-300 dark:border-white/75 dark:hover:border-zinc-800 duration-300"
-      >
-        {pending ? "Loading..." : "Login"}
-      </button>
+      <Button />
     </form>
   );
 };

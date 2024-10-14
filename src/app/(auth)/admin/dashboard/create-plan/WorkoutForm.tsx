@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { createPlan } from "./actions";
 import { useFormState } from "react-dom";
 import toast from "react-hot-toast";
+import { AdminContext } from "@/context/AdminContext";
 
 const WorkoutForm = () => {
   const [state, formAction] = useFormState(createPlan, undefined);
@@ -88,9 +89,12 @@ const WorkoutForm = () => {
             <p className="text-sm text-red-500">{state?.errors.img}</p>
           )}
         </div>
-        <button className="mt-6 outline-none duration-300 transition-colors border-zinc-500 border-2 hover:bg-zinc-200 dark:hover:bg-zinc-800 py-2 w-full md:w-1/3 rounded-md">
+        <button className="mt-6 cursor-pointer outline-none duration-300 transition-colors border-zinc-500 border-2 hover:bg-zinc-200 dark:hover:bg-zinc-800 py-2 w-full md:w-1/3 rounded-md">
           Submit
         </button>
+        {state?.errors?.user && (
+          <p className="text-sm text-red-500">{state?.errors.user}</p>
+        )}
       </form>
     </div>
   );

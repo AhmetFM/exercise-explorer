@@ -28,10 +28,13 @@ export const handleSubmit = async (prevState: any, formData: FormData) => {
     const user = await getUser(username);
     if (user && user.password === password) {
       await createSession(user.id);
-      console.log(user.id);
       return {
         success: true,
-        user,
+        user: {
+          username: user.username,
+          password: user.password,
+          isAdmin: user.isAdmin,
+        },
       };
     } else {
       return {

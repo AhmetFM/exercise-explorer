@@ -1,13 +1,16 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { createWorkout, getPlans } from "./actions";
 import { useFormState } from "react-dom";
 import toast from "react-hot-toast";
+import { AdminContext } from "@/context/AdminContext";
 
 const CreateWorkoutForm = () => {
   const [plans, setPlans] = useState<string[]>([]);
-
-  const [state, formAction] = useFormState(createWorkout, undefined);
+  const { user } = useContext(AdminContext);
+  const [state, formAction] = useFormState(createWorkout, {
+    errors: {},
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -211,9 +214,12 @@ const CreateWorkoutForm = () => {
             <p className="text-sm text-red-500">{state?.errors.selectPlan}</p>
           )}
         </div>
-        <button className="mt-6 outline-none duration-300 transition-colors border-zinc-500 border-2 hover:bg-zinc-200 dark:hover:bg-zinc-800 py-2 w-full md:w-1/3 rounded-md">
+        <button className="mt-6 cursor-pointer outline-none duration-300 transition-colors border-zinc-500 border-2 hover:bg-zinc-200 dark:hover:bg-zinc-800 py-2 w-full md:w-1/3 rounded-md">
           Submit
         </button>
+        {state?.errors?.user && (
+          <div className="text-red-500">{state.errors.user}</div>
+        )}
       </form>
     </div>
   );

@@ -21,6 +21,10 @@ export async function encrypt(payload: any) {
 }
 
 export async function decrypt(session: any) {
+  if (!session || typeof session !== "string") {
+    return null;
+  }
+
   try {
     const { payload } = await jwtVerify(session, key, {
       algorithms: ["HS256"],
@@ -42,6 +46,10 @@ export async function createSession(userId: string) {
 
 export async function verifySession() {
   const cookie = cookies().get(myCookie.name)?.value;
+  if (!cookie) {
+    redirect("/admin/login");
+  }
+
   const session = await decrypt(cookie);
   if (!session?.userId) {
     redirect("/admin/login");

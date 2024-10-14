@@ -3,6 +3,8 @@
 import prisma from "@/lib/db";
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
+import { verifySession } from "@/lib/session";
+import { getUserByToken } from "@/lib/data";
 
 export const getPlansWithWorkouts = async () => {
   const workouts = await prisma.plan.findMany({
@@ -26,6 +28,17 @@ export const findWorkout = async (workoutSlug: any) => {
 };
 
 export const createProgram = async (prevState: any, formData: FormData) => {
+  const session = await verifySession();
+  const user = await getUserByToken(session?.userId);
+
+  if (!user?.isAdmin) {
+    return {
+      errors: {
+        user: "You are not authorized to create a plan",
+      },
+    };
+  }
+
   const title = formData.get("title") as string;
   const exercises = JSON.parse(formData.get("exercises") as string);
   const workoutId = formData.get("workoutId") as string;
@@ -59,7 +72,6 @@ export const createProgram = async (prevState: any, formData: FormData) => {
       }),
       {}
     );
-    console.log(errors);
     return {
       errors,
     };

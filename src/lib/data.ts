@@ -1,4 +1,5 @@
 import prisma from "./db";
+import { verifySession } from "./session";
 
 export const AdminUsers = [
   {
@@ -1248,6 +1249,15 @@ export const getUser = async (username: string) => {
   const user = await prisma.user.findUnique({
     where: {
       username: username,
+    },
+  });
+  return user;
+};
+
+export const getUserByToken = async (id: any) => {
+  const user = await prisma.user.findUnique({
+    where: {
+      id: id,
     },
   });
   return user;

@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { createProgram, findWorkout, getPlansWithWorkouts } from "./actions";
 import toast from "react-hot-toast";
 import { useFormState } from "react-dom";
+import { AdminContext } from "@/context/AdminContext";
 
 type TPlans = {
   slug: string;
@@ -169,6 +170,7 @@ const AddProgramForm = ({
     rest: "",
   });
   const [exercises, setExercises] = useState<string[]>([]);
+  const { user } = useContext(AdminContext);
 
   const initialState = {
     message: "",
@@ -367,10 +369,13 @@ const AddProgramForm = ({
       )}
       <button
         type="submit"
-        className="mt-6 outline-none duration-300 transition-colors border-zinc-500 border-2 hover:bg-zinc-200 dark:hover:bg-zinc-800 py-2 w-full md:w-1/3 rounded-md"
+        className="mt-6 cursor-pointer outline-none duration-300 transition-colors border-zinc-500 border-2 hover:bg-zinc-200 dark:hover:bg-zinc-800 py-2 w-full md:w-1/3 rounded-md"
       >
         Submit
       </button>
+      {state?.errors?.user && (
+        <div className="text-red-500">{state.errors.user}</div>
+      )}
     </form>
   );
 };

@@ -4,7 +4,6 @@ import { createContext, useState } from "react";
 type AdminContextType = {
   user: {
     username: string;
-    password: string;
     isAdmin: boolean;
   } | null;
   setUser: React.Dispatch<React.SetStateAction<any>>;
@@ -13,7 +12,6 @@ type AdminContextType = {
 const initialValue: AdminContextType = {
   user: {
     username: "",
-    password: "",
     isAdmin: false,
   },
   setUser: () => {},
@@ -22,7 +20,7 @@ const initialValue: AdminContextType = {
 export const AdminContext = createContext(initialValue);
 
 const AdminProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(initialValue.user);
 
   return (
     <AdminContext.Provider

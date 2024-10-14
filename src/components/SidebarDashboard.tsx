@@ -26,8 +26,8 @@ const SidebarDashboard = ({ items }: SidebarDashboardProps) => {
           className={cn(
             buttonVariants({ variant: "ghost" }),
             pathname === item.href
-              ? "bg-zinc-700 hover:bg-zinc-700"
-              : "hover:bg-transparent",
+              ? "bg-zinc-300 hover:bg-zinc-300 dark:bg-zinc-700 dark:hover:bg-zinc-700"
+              : "hover:bg-zinc-100 dark:hover:bg-zinc-800",
             "justify-start text-wrap w-full"
           )}
         >
