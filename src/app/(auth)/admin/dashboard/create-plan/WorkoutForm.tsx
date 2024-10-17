@@ -1,12 +1,13 @@
 "use client";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { createPlan } from "./actions";
 import { useFormState } from "react-dom";
 import toast from "react-hot-toast";
-import { AdminContext } from "@/context/AdminContext";
 
 const WorkoutForm = () => {
   const [state, formAction] = useFormState(createPlan, undefined);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+
   useEffect(() => {
     if (state?.message === "success") {
       toast.success("Plan Created Successfully!", {
@@ -14,6 +15,25 @@ const WorkoutForm = () => {
       });
     }
   }, [state]);
+
+  const isValidUrl = (urlString: string): boolean => {
+    try {
+      new URL(urlString);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  };
+
+  const handleImageUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const url = e.target.value.trim();
+    if (isValidUrl(url)) {
+      setImagePreview(url);
+    } else {
+      setImagePreview(null);
+    }
+  };
+
   return (
     <div>
       {/* Form For Creating Plan */}
@@ -79,12 +99,24 @@ const WorkoutForm = () => {
             className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
             id="planImg"
             name="img"
-            placeholder="Enter Plan Image URL"
+            placeholder="https://images.pexels.com/..."
             type="url"
+            onChange={handleImageUrlChange}
           />
           <p className="text-sm text-gray-500">
-            This is Image of this workout plan.
+            This is image of this workout plan. You can also upload image from
+            pexels.
           </p>
+          {imagePreview && (
+            <div className="mt-2">
+              <img
+                src={imagePreview}
+                alt="Preview"
+                className="max-w-full h-auto max-h-48 object-contain"
+                onError={() => setImagePreview(null)}
+              />
+            </div>
+          )}
           {state?.errors?.img && (
             <p className="text-sm text-red-500">{state?.errors.img}</p>
           )}
