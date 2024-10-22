@@ -4,8 +4,7 @@ import React from "react";
 const HomeHeader = () => {
   return (
     <section
-      className="flex items-center justify-center text-[12px] md:text-[14px] lg:text-[16px] min-h-[605px] md:min-h-[650px] lg:min-h-[750px] flex-col gap-8 bg-background-light dark:bg-background-dark bg-center object-cover bg-no-repeat text-white scroll-mt-20
-      "
+      className="flex items-center justify-center text-[12px] md:text-[14px] lg:text-[16px] min-h-[605px] md:min-h-[650px] lg:min-h-[750px] flex-col gap-8 bg-background-light dark:bg-background-dark bg-center object-cover bg-no-repeat text-white scroll-mt-20"
       id="home"
     >
       <div className="flex flex-col items-center justify-center gap-3">
@@ -18,10 +17,14 @@ const HomeHeader = () => {
       </div>
       <div className="flex gap-2 font-medium">
         <button className="text-white border-2 hover:bg-zinc-950 hover:bg-opacity-60 py-2 px-4 rounded duration-300">
-          <Link href="/step-one">Create a workout plan</Link>
+          <Link href="/step-one" className="w-full h-full">
+            Create a workout plan
+          </Link>
         </button>
         <button className="border-2 hover:bg-zinc-950 hover:bg-opacity-60 py-2 px-4 rounded duration-300">
-          <Link href="/workouts">Explore workouts</Link>
+          <Link href="/workouts" className="w-full h-full">
+            Explore workouts
+          </Link>
         </button>
       </div>
     </section>

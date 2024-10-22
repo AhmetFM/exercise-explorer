@@ -15,6 +15,7 @@ const Footer = () => {
           {/* LINKS */}
           <div className="flex gap-4 justify-center items-center">
             <Link
+              aria-label="Instagram"
               href="https://www.instagram.com/ahmeetmeric/"
               className="hover:bg-zinc-100 dark:hover:bg-zinc-800 w-10 h-10 rounded-full flex items-center justify-center duration-300"
             >
@@ -25,6 +26,7 @@ const Footer = () => {
               />
             </Link>
             <Link
+              aria-label="LinkedIn"
               href="https://www.linkedin.com/in/ahmet-furkan-meric/"
               className="hover:bg-zinc-100 dark:hover:bg-zinc-800 w-10 h-10 rounded-full flex items-center justify-center duration-300"
             >
@@ -35,19 +37,22 @@ const Footer = () => {
               />
             </Link>
             <Link
+              aria-label="GitHub"
               href="https://github.com/AhmetFM"
               className="hover:bg-zinc-100 dark:hover:bg-zinc-800 w-10 h-10 rounded-full flex items-center justify-center duration-300"
             >
               <FaGithub width={24} height={24} className="w-[24px] h-[24px]" />
             </Link>
             <Link
+              aria-label="Mail"
               href="mailto:afurkanmeric@gmail.com"
               className="hover:bg-zinc-100 dark:hover:bg-zinc-800 w-10 h-10 rounded-full flex items-center justify-center duration-300"
             >
               <IoIosMail width={24} height={24} className="w-[24px] h-[24px]" />
             </Link>
             <Link
-              href="https://meric-three.vercel.app/"
+              aria-label="Portfolio"
+              href="https://ahmetmeric.vercel.app/"
               className="hover:bg-zinc-100 dark:hover:bg-zinc-800 w-10 h-10 rounded-full flex items-center justify-center duration-300"
             >
               <TbWorld width={24} height={24} className="w-[24px] h-[24px]" />

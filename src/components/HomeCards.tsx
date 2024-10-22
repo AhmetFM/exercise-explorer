@@ -36,9 +36,9 @@ const HomeCards = () => {
       id="features"
     >
       <div className="flex flex-col gap-4 mb-12 text-center">
-        <h3 className="text-center text-lg md:text-xl lg:text-2xl">
+        <h2 className="text-center text-lg md:text-xl lg:text-2xl">
           Our Features
-        </h3>
+        </h2>
         <span className="text-xl md:text-2xl lg:text-3xl">
           CREATE A WORKOUT PLAN FOR YOUR WORKOUT BACKGROUND
         </span>
