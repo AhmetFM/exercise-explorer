@@ -43,7 +43,7 @@ const WorkoutForm = () => {
             Title &#42;
           </label>
           <input
-            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
+            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500"
             id="planTitle"
             name="title"
             placeholder="Enter Plan Title"
@@ -61,7 +61,7 @@ const WorkoutForm = () => {
             Slug &#42;
           </label>
           <input
-            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
+            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500"
             id="planSlug"
             name="slug"
             placeholder="Enter Plan Slug"
@@ -79,7 +79,7 @@ const WorkoutForm = () => {
             Desc &#42;
           </label>
           <textarea
-            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
+            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500"
             id="planDesc"
             name="desc"
             placeholder="Enter Plan Desc"
@@ -96,7 +96,7 @@ const WorkoutForm = () => {
             Image
           </label>
           <input
-            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
+            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500"
             id="planImg"
             name="img"
             placeholder="https://images.pexels.com/..."

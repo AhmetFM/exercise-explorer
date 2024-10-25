@@ -36,7 +36,7 @@ const CreateWorkoutForm = () => {
             Title &#42;
           </label>
           <input
-            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
+            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-400"
             id="title"
             name="title"
             placeholder="Enter Plan Title"
@@ -54,7 +54,7 @@ const CreateWorkoutForm = () => {
             Slug &#42;
           </label>
           <input
-            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
+            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500"
             id="slug"
             name="slug"
             placeholder="/slug"
@@ -70,7 +70,7 @@ const CreateWorkoutForm = () => {
             Short Title &#42;
           </label>
           <input
-            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
+            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500"
             id="shortTitle"
             name="shortTitle"
             placeholder="Short title"
@@ -88,7 +88,7 @@ const CreateWorkoutForm = () => {
             Desc &#42;
           </label>
           <input
-            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
+            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500"
             id="desc"
             name="desc"
             placeholder="Enter Plan desc"
@@ -106,7 +106,7 @@ const CreateWorkoutForm = () => {
             Goal &#42;
           </label>
           <input
-            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
+            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500"
             id="goal"
             name="goal"
             placeholder="Build Muscle"
@@ -124,7 +124,7 @@ const CreateWorkoutForm = () => {
             Type &#42;
           </label>
           <input
-            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
+            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500"
             id="type"
             name="type"
             placeholder="Split"
@@ -142,7 +142,7 @@ const CreateWorkoutForm = () => {
             Duration &#42;
           </label>
           <input
-            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
+            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500"
             id="duration"
             name="duration"
             placeholder="12 Weeks"
@@ -160,7 +160,7 @@ const CreateWorkoutForm = () => {
             Days Per Week &#42;
           </label>
           <input
-            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
+            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500"
             id="days"
             name="days"
             placeholder="5"
@@ -178,7 +178,7 @@ const CreateWorkoutForm = () => {
             Image
           </label>
           <input
-            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
+            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500"
             id="img"
             name="img"
             placeholder="https://images.pexels.com/blabla"

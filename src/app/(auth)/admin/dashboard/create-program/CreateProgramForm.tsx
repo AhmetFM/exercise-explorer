@@ -272,7 +272,7 @@ const AddProgramForm = ({
           Title &#42;
         </label>
         <input
-          className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
+          className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500"
           id="title"
           name="title"
           placeholder={`Workout ${data?.days.length! + 1}: ...Day`}
@@ -301,7 +301,7 @@ const AddProgramForm = ({
               name="name"
               id="name"
               value={newExercise.name}
-              className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700"
+              className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500"
               onChange={(e) =>
                 setNewExercise({ ...newExercise, name: e.target.value })
               }
@@ -313,7 +313,7 @@ const AddProgramForm = ({
                 placeholder="Sets"
                 name="sets"
                 id="sets"
-                className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700 min-w-28 w-full"
+                className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500 min-w-28 w-full"
                 onChange={(e) =>
                   setNewExercise({ ...newExercise, sets: e.target.value })
                 }
@@ -324,7 +324,7 @@ const AddProgramForm = ({
                 placeholder="Reps"
                 name="reps"
                 id="reps"
-                className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700 min-w-28 w-full"
+                className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500 min-w-28 w-full"
                 onChange={(e) =>
                   setNewExercise({ ...newExercise, reps: e.target.value })
                 }
@@ -336,7 +336,7 @@ const AddProgramForm = ({
                 onChange={(e) =>
                   setNewExercise({ ...newExercise, rest: e.target.value })
                 }
-                className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-700 min-w-28 w-full"
+                className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500 min-w-28 w-full"
               >
                 <option value="" disabled>
                   Choose One
