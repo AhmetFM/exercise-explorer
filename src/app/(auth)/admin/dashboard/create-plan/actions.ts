@@ -12,7 +12,7 @@ export async function createPlan(prevState: any, formData: FormData) {
   if (!user?.isAdmin) {
     return {
       errors: {
-        user: "You are not authorized to create a plan",
+        user: "You are not authorized to create a workout plan",
       },
     };
   }
