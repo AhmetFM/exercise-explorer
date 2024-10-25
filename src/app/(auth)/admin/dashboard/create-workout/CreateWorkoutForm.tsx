@@ -36,7 +36,7 @@ const CreateWorkoutForm = () => {
             Title &#42;
           </label>
           <input
-            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-400"
+            className="border rounded-md border-zinc-700 px-4 py-1 outline-none focus-visible:border-zinc-400 transition-all duration-100 placeholder:text-gray-500"
             id="title"
             name="title"
             placeholder="Enter Plan Title"
