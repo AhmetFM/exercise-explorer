@@ -35,11 +35,11 @@ const HamburgerMenu = () => {
         lg:h-[calc(100vh-80px)] gap-8 font-medium z-30 text-3xl"
         >
           <Link
-            className="hover:scale-110 duration-100"
-            href="/#features"
+            className="hover:scale-110 duration-100 underline underline-offset-[6px]"
+            href="/admin"
             onClick={() => setIsOpen(false)}
           >
-            Features
+            Admin
           </Link>
           <Link
             className="hover:scale-110 duration-100"
@@ -47,6 +47,13 @@ const HamburgerMenu = () => {
             onClick={() => setIsOpen(false)}
           >
             Workout Plans
+          </Link>
+          <Link
+            className="hover:scale-110 duration-100"
+            href="/#features"
+            onClick={() => setIsOpen(false)}
+          >
+            Features
           </Link>
           <Link
             className="hover:scale-110 duration-100"

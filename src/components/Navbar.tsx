@@ -31,15 +31,15 @@ const Navbar = () => {
           </Link>
           <Link
             className="hover:scale-110 ease-in-out duration-200"
-            href="/#features"
-          >
-            Features
-          </Link>
-          <Link
-            className="hover:scale-110 ease-in-out duration-200"
             href="/workouts"
           >
             Workout Plans
+          </Link>
+          <Link
+            className="hover:scale-110 ease-in-out duration-200"
+            href="/#features"
+          >
+            Features
           </Link>
           <Link
             className="hover:scale-110 ease-in-out duration-200"

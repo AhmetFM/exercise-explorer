@@ -12,7 +12,7 @@ type CardProps = {
 
 const Card = ({ title, desc, icon, step }: CardProps) => {
   return (
-    <div className="w-[260px] h-[300px] lg:w-[280px] lg:h-[340px] bg-white dark:bg-zinc-800 rounded-lg shadow-md dark:shadow-zinc-600 p-4 flex flex-col items-center pt-12 gap-3 text-center">
+    <div className="w-[260px] h-[300px] lg:w-[280px] lg:h-[340px] bg-zinc-100 dark:bg-zinc-800 rounded-lg shadow-md shadow-zinc-950/50 dark:shadow-zinc-600 p-4 flex flex-col items-center pt-12 gap-3 text-center">
       {icon === "calendar" && (
         <FaCalendarAlt width={40} height={40} className="w-[40px] h-[40px]" />
       )}
