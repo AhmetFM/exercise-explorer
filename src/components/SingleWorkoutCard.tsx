@@ -41,7 +41,7 @@ const SingleWorkoutCard = ({
       </div>
       <Link
         href={`/workouts/${path}/${slug}`}
-        className="px-3 py-4 bg-zinc-700 text-white self-center rounded-lg hover:scale-105 duration-200"
+        className="px-3 py-4 bg-zinc-500 dark:bg-zinc-700 text-white self-center rounded-lg hover:scale-105 duration-200"
       >
         View Workout
       </Link>

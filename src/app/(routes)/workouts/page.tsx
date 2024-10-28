@@ -1,20 +1,6 @@
 import WorkoutCard from "@/components/WorkoutCard";
 import prisma from "@/lib/db";
-import React from "react";
-
-// type WorkoutProps = {
-//   id: number;
-//   slug: string;
-//   title: string;
-//   img: string;
-//   description: string;
-//   workouts: {
-//     id: number;
-//     title: string;
-//     img: string;
-//     description: string;
-//   }[];
-// }[];
+import React, { Suspense } from "react";
 
 export const metadata = {
   title: "Workout Plans",
@@ -39,11 +25,13 @@ const WorkoutPage = async () => {
         workout for your experience and goals.
       </p>
       {/* className="grid gap-6 mt-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3" */}
-      <div className="flex flex-wrap gap-6 mt-8 justify-center md:mx-4 xl:mx-0">
-        {workouts.map((workout) => (
-          <WorkoutCard key={workout.id} {...workout} />
-        ))}
-      </div>
+      <Suspense fallback={"Loading..."}>
+        <div className="flex flex-wrap gap-6 mt-8 justify-center md:mx-4 xl:mx-0">
+          {workouts.map((workout) => (
+            <WorkoutCard key={workout.id} {...workout} />
+          ))}
+        </div>
+      </Suspense>
     </div>
   );
 };
