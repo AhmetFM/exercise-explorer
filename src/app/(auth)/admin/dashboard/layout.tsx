@@ -1,5 +1,6 @@
 import LogoutButton from "@/components/LogoutButton";
 import SidebarDashboard from "@/components/SidebarDashboard";
+import SidebarHamburgerMenu from "@/components/SidebarHamburgerMenu";
 import { Separator } from "@/components/ui/separator";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -43,7 +44,8 @@ export default function DashboardLayout({
           >
             Dashboard
           </Link>
-          <p className="text-gray-400">Welcome to your dashboard</p>
+          <p className="text-gray-400 mb-2">Welcome to your dashboard</p>
+          <SidebarHamburgerMenu items={sidebarNavItems} />
         </div>
         <LogoutButton />
       </div>
