@@ -27,6 +27,11 @@ const sidebarNavItems = [
     icon: "create-program",
     href: "/admin/dashboard/create-program",
   },
+  {
+    title: "Delete a Workout Program",
+    icon: "delete-program",
+    href: "/admin/dashboard/delete-program",
+  },
 ];
 
 export default function DashboardLayout({
