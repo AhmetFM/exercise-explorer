@@ -25,7 +25,7 @@ const Button = () => {
 
 const LoginForm = () => {
   const [state, formAction] = useFormState(handleSubmit, initialState);
-  const [showPopover, setShowPopover] = useState<boolean>(false);
+  const [showPopover, setShowPopover] = useState<boolean>(true);
   const { setUser } = useContext(AdminContext);
 
   // useEffect(() => {
@@ -90,9 +90,13 @@ const LoginForm = () => {
       >
         <IoIosInformationCircleOutline className="w-full h-full" />
         {showPopover && (
-          <div className="absolute left-8 top-1/2 transform -translate-y-1/2 ml-2 p-2 w-40 bg-zinc-800 border border-gray-200 rounded shadow-lg duration-300 transition-all">
-            <p className="text-sm text-white text-start">username : test</p>
-            <p className="text-sm text-white text-start">password : test123</p>
+          <div className="absolute left-8 top-1/2 transform -translate-y-1/2 ml-2 p-2 w-40 border bg-zinc-100 dark:bg-zinc-800 border-zinc-700  dark:border-gray-200 rounded shadow-lg duration-300 transition-all">
+            <p className="text-sm dark:text-white text-start">
+              username : test
+            </p>
+            <p className="text-sm dark:text-white text-start">
+              password : test123
+            </p>
           </div>
         )}
       </button>
