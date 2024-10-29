@@ -25,7 +25,7 @@ const Button = () => {
 
 const LoginForm = () => {
   const [state, formAction] = useFormState(handleSubmit, initialState);
-  const [showPopover, setShowPopover] = useState<boolean>(true);
+  const [showPopover, setShowPopover] = useState<boolean>(false);
   const { setUser } = useContext(AdminContext);
 
   // useEffect(() => {
