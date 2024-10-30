@@ -1,5 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import React from "react";
+import DeleteProgramForm from "./DeleteProgramForm";
 
 const DeleteProgramPage = () => {
   return (
@@ -11,6 +12,7 @@ const DeleteProgramPage = () => {
         </p>
       </div>
       <Separator />
+      <DeleteProgramForm />
     </div>
   );
 };
