@@ -16,16 +16,16 @@ const HomeHeader = () => {
         </p>
       </div>
       <div className="flex gap-2 font-medium">
-        <button className="text-white border-2 hover:bg-zinc-950 hover:bg-opacity-60 py-2 px-4 rounded duration-300">
-          <Link href="/step-one" className="w-full h-full">
+        <Link href="/step-one">
+          <button className="text-white border-2 hover:bg-zinc-950 hover:bg-opacity-60 py-2 px-4 rounded duration-300">
             Create a workout plan
-          </Link>
-        </button>
-        <button className="border-2 hover:bg-zinc-950 hover:bg-opacity-60 py-2 px-4 rounded duration-300">
-          <Link href="/workouts" className="w-full h-full">
+          </button>
+        </Link>
+        <Link href="/workouts">
+          <button className="border-2 hover:bg-zinc-950 hover:bg-opacity-60 py-2 px-4 rounded duration-300">
             Explore workouts
-          </Link>
-        </button>
+          </button>
+        </Link>
       </div>
     </section>
   );
