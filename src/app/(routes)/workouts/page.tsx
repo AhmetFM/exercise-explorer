@@ -8,6 +8,8 @@ export const metadata = {
     "Workout categories for you to choose from and start your journey",
 };
 
+export const revalidate = 3600; // invalidate every hour
+
 const WorkoutPage = async () => {
   // const workouts: WorkoutProps = dummyData;
   const workouts = await prisma.plan.findMany({
@@ -24,7 +26,6 @@ const WorkoutPage = async () => {
         Once in the category, use the sort and filter options to find the right
         workout for your experience and goals.
       </p>
-      {/* className="grid gap-6 mt-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3" */}
       <Suspense fallback={"Loading..."}>
         <div className="flex flex-wrap gap-6 mt-8 justify-center md:mx-4 xl:mx-0">
           {workouts.map((workout) => (
