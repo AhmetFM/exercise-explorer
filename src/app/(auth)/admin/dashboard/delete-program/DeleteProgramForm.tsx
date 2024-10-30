@@ -50,7 +50,7 @@ const DeleteProgramForm = () => {
         Select which workout you want to delete a program from ?
       </label>
       <select
-        className="border px-2 py-1 w-1/2"
+        className="border px-2 py-1 w-full lg:w-1/2"
         name="workouts"
         id="workouts"
         defaultValue=""
@@ -68,7 +68,7 @@ const DeleteProgramForm = () => {
 
       {workout && (
         <div className="flex flex-col gap-2">
-          <div className="flex items-center gap-4 ">
+          <div className="flex items-center gap-1 md:gap-4 flex-col md:flex-row">
             <h2 className="text-lg font-medium">Selected Workout:</h2>
             <p className="underline underline-offset-2 italic">{workout}</p>
           </div>
@@ -76,7 +76,7 @@ const DeleteProgramForm = () => {
             Select which program you want to delete
           </label>
           <select
-            className="border px-2 py-1 w-1/2"
+            className="border px-2 py-1 w-full lg:w-1/2"
             name="program"
             id="program"
             defaultValue=""
