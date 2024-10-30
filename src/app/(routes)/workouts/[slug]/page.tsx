@@ -2,6 +2,25 @@ import NotFound from "@/app/not-found";
 import prisma from "@/lib/db";
 import WorkoutSection from "./workout-section";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const workout = await prisma.plan.findUnique({
+    where: {
+      slug: params.slug,
+    },
+  });
+
+  if (!workout) return {};
+
+  return {
+    title: workout.title,
+    description: workout.desc,
+  };
+}
+
 const SingleWorkoutListPage = async ({
   params,
 }: {
