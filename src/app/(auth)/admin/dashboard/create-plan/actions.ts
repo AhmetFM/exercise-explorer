@@ -83,7 +83,9 @@ export async function createPlan(prevState: any, formData: FormData) {
         slug: slug,
         title: title,
         desc: desc,
-        img: img,
+        img: img
+          ? img
+          : "https://images.pexels.com/photos/6740305/pexels-photo-6740305.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       },
     });
 
