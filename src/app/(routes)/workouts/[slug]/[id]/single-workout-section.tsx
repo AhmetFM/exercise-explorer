@@ -131,9 +131,15 @@ const SingleWorkoutSection = ({
                         <td className="flex-1 py-2 max-w-36">
                           {newExercise[0]}
                         </td>
-                        <td className="flex-1 py-2">{newExercise[1]}</td>
-                        <td className="flex-1 py-2">{newExercise[2]}</td>
-                        <td className="flex-1 py-2">{newExercise[3]}</td>
+                        <td className="flex-auto w-16 md:w-32 py-2">
+                          {newExercise[1]}
+                        </td>
+                        <td className="flex-auto w-16 md:w-32 py-2">
+                          {newExercise[2]}
+                        </td>
+                        <td className="flex-auto w-16 md:w-32 py-2">
+                          {newExercise[3]}
+                        </td>
                       </tr>
                     );
                   })}

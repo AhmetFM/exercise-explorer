@@ -18,7 +18,7 @@ const SingleWorkoutCard = ({
   path,
 }: SingleWorkoutCardProps) => {
   return (
-    <div className="flex flex-col gap-6 w-full max-w-2xl">
+    <div className="flex flex-col gap-6 w-full max-w-md">
       <div className="self-center">
         {/* Image using Nextjs */}
         <Image
@@ -31,9 +31,9 @@ const SingleWorkoutCard = ({
       </div>
       <div className="flex flex-col items-center gap-4">
         {/* Title and Desc */}
-        <h1 className="text-2xl">{title}</h1>
+        <h1 className="text-2xl max-w-[400px]">{title}</h1>
         <p
-          className="text-sm font-light text-justify
+          className="text-sm font-light text-justify max-w-[400px]
         "
         >
           {description}
