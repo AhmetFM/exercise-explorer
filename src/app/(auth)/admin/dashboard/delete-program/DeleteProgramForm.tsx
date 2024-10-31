@@ -1,8 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { deleteProgram, getAllWorkouts, getWorkoutPrograms } from "./actions";
+import { deleteProgram, getWorkoutPrograms } from "./actions";
 import { useFormState } from "react-dom";
 import toast from "react-hot-toast";
+import { getAllWorkouts } from "@/lib/actions";
 
 const DeleteProgramForm = () => {
   const [workouts, setWorkouts] = useState<any[]>([]);
@@ -50,7 +51,7 @@ const DeleteProgramForm = () => {
         Select which workout you want to delete a program from ?
       </label>
       <select
-        className="border px-2 py-1 w-full lg:w-1/2"
+        className="border px-3 py-2 rounded-md w-full lg:w-1/2"
         name="workouts"
         id="workouts"
         defaultValue=""

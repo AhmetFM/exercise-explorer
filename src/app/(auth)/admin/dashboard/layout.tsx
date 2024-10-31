@@ -1,6 +1,6 @@
-import LogoutButton from "@/components/LogoutButton";
-import SidebarDashboard from "@/components/SidebarDashboard";
-import SidebarHamburgerMenu from "@/components/SidebarHamburgerMenu";
+import LogoutButton from "@/components/admin/dashboard/LogoutButton";
+import SidebarDashboard from "@/components/admin/dashboard/SidebarDashboard";
+import SidebarHamburgerMenu from "@/components/admin/dashboard/SidebarHamburgerMenu";
 import { Separator } from "@/components/ui/separator";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -31,6 +31,11 @@ const sidebarNavItems = [
     title: "Delete a Workout Program",
     icon: "delete-program",
     href: "/admin/dashboard/delete-program",
+  },
+  {
+    title: "Update Content",
+    icon: "update-content",
+    href: "/admin/dashboard/update-content",
   },
 ];
 

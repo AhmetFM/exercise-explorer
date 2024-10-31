@@ -4,11 +4,6 @@ import prisma from "@/lib/db";
 import { verifySession } from "@/lib/session";
 import { z } from "zod";
 
-export const getAllWorkouts = async () => {
-  const workouts = await prisma.workout.findMany();
-  return workouts;
-};
-
 export const getWorkoutPrograms = async (slug: string) => {
   const workout = await prisma.workout.findUnique({
     where: {

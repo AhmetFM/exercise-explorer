@@ -1,5 +1,5 @@
 import React from "react";
-import WorkoutCard from "./WorkoutCard";
+import WorkoutCard from "../workouts/WorkoutCard";
 import Link from "next/link";
 import prisma from "@/lib/db";
 

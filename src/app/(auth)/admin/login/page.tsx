@@ -1,5 +1,4 @@
-import LoginForm from "@/components/LoginForm";
-import { verifySession } from "@/lib/session";
+import LoginForm from "@/components/admin/login/LoginForm";
 import React from "react";
 
 const LoginPage = async () => {

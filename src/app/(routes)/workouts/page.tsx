@@ -1,5 +1,5 @@
-import LoadingWorkouts from "@/components/LoadingWorkouts";
-import WorkoutCardsList from "@/components/WorkoutCardsList";
+import LoadingWorkouts from "@/components/loading/LoadingWorkouts";
+import WorkoutCardsList from "@/components/workouts/WorkoutCardsList";
 import React, { Suspense } from "react";
 
 export const metadata = {

@@ -33,13 +33,13 @@ const SingleWorkoutSection = ({
         <div className="flex flex-col justify-center md:flex-row gap-4">
           {/* Image */}
           <div className="flex flex-col flex-1 items-center gap-8">
-            <div>
+            <div className="max-w-[600px] max-h-[600px]">
               <Image
                 src={`${singleWorkout.img}`}
                 alt=""
                 width={400}
                 height={400}
-                className="object-contain max-w-[600px] max-h-[400px]"
+                className="object-contain w-full h-auto"
               />
             </div>
           </div>
@@ -84,14 +84,6 @@ const SingleWorkoutSection = ({
                 </td>
                 <td>{singleWorkout.daysPerWeek}</td>
               </tr>
-              {/* <tr className="border-b h-20 border-black dark:border-white border-opacity-10 dark:border-opacity-10">
-                  <td className="italic text-gray-600 dark:text-gray-200">
-                    Download PDF
-                  </td>
-                  <td className="min-w-[150px]">
-                    <DownloadButton />
-                  </td>
-                </tr> */}
             </tbody>
           </table>
         </div>

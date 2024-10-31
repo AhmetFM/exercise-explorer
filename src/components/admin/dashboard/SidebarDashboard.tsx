@@ -3,9 +3,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import { buttonVariants } from "./ui/button";
-import { Separator } from "./ui/separator";
-import SidebarHamburgerMenu from "./SidebarHamburgerMenu";
+import { buttonVariants } from "../../ui/button";
 
 export interface SidebarDashboardProps
   extends React.HTMLAttributes<HTMLElement> {

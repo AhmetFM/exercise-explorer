@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from "react";
 
 import { IoMdArrowBack } from "react-icons/io";
-import SingleWorkoutCard from "@/components/SingleWorkoutCard";
+import SingleWorkoutCard from "@/components/workouts/SingleWorkoutCard";
 import { useRouter } from "next/navigation";
-import LoadingWorkoutSection from "@/components/LoadingWorkoutSection";
+import LoadingWorkoutSection from "@/components/loading/LoadingWorkoutSection";
 
 const WorkoutSection = ({ workout }: any) => {
   const [loading, setLoading] = useState(true);

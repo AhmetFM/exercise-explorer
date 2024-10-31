@@ -1,6 +1,7 @@
 "use server";
 
 import { z } from "zod";
+import prisma from "./db";
 
 export const contactFormAction = (prevState: any, formData: FormData) => {
   const data = Object.fromEntries(formData.entries());
@@ -30,4 +31,27 @@ export const contactFormAction = (prevState: any, formData: FormData) => {
     user_email,
     messageSend,
   };
+};
+
+export const getAllPlans = async () => {
+  const plans = await prisma.plan.findMany();
+  return plans;
+};
+
+export const getAllWorkouts = async () => {
+  const workouts = await prisma.workout.findMany({
+    include: {
+      Plan: true,
+    },
+  });
+  return workouts;
+};
+
+export const getAllPrograms = async () => {
+  const programs = await prisma.day.findMany({
+    include: {
+      Workout: true,
+    },
+  });
+  return programs;
 };
