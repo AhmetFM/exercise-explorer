@@ -169,7 +169,7 @@ export async function createWorkout(prevState: any, formData: FormData) {
         planId: selectedPlanId.id,
       },
     });
-    revalidatePath("/admin/dashboard/create-workout");
+
     return {
       message: "success",
     };

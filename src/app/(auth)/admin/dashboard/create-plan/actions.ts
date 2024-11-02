@@ -89,8 +89,6 @@ export async function createPlan(prevState: any, formData: FormData) {
       },
     });
 
-    revalidatePath("/admin/dashboard/create-plan");
-
     return {
       message: "success",
     };

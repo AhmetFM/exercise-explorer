@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { createWorkout, getPlans } from "./actions";
 import { useFormState } from "react-dom";
 import toast from "react-hot-toast";
@@ -12,6 +12,8 @@ const CreateWorkoutForm = () => {
     errors: {},
   });
 
+  const formRef = useRef<HTMLFormElement>(null);
+
   useEffect(() => {
     const fetchData = async () => {
       const plans = await getPlans();
@@ -20,17 +22,25 @@ const CreateWorkoutForm = () => {
     fetchData().catch(console.error);
   }, []);
 
+  // If the form is submitted first check for it and toast it.
   useEffect(() => {
     if (state?.message === "success") {
       toast.success("Workout created successfully", {
         style: { background: "#14532d", color: "white" },
+      });
+      //Reset the form if it is succesful.
+      formRef.current?.reset();
+      scrollTo({ top: 0, behavior: "smooth" });
+    } else if (state?.message === "error") {
+      toast.error("Something went wrong", {
+        style: { background: "#7f1d1d", color: "white" },
       });
     }
   }, [state]);
 
   return (
     <div>
-      <form action={formAction} className="flex flex-col gap-4">
+      <form ref={formRef} action={formAction} className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <label className="text-xl" htmlFor="title">
             Title &#42;

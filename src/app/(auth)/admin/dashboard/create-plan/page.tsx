@@ -1,5 +1,5 @@
 import { Separator } from "@/components/ui/separator";
-import WorkoutForm from "./WorkoutForm";
+import CreatePlanForm from "./CreatePlanForm";
 
 const CreateWorkoutPage = () => {
   return (
@@ -11,7 +11,7 @@ const CreateWorkoutPage = () => {
         </p>
       </div>
       <Separator />
-      <WorkoutForm />
+      <CreatePlanForm />
     </div>
   );
 };
