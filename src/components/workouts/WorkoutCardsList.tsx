@@ -1,8 +1,10 @@
 import prisma from "@/lib/db";
 import React from "react";
 import WorkoutCard from "./WorkoutCard";
+import { unstable_noStore } from "next/cache";
 
 const WorkoutCardsList = async () => {
+  unstable_noStore();
   const workouts = await prisma.plan.findMany({
     include: {
       workouts: true,
