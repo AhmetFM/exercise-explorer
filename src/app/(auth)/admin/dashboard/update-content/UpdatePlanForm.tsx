@@ -43,11 +43,6 @@ const UpdatePlanForm = ({
     }
   }, [state, setIsSelectionDone]);
 
-  useEffect(() => {
-    if (state?.message === "success") {
-    }
-  }, [state]);
-
   const isValidUrl = (urlString: string): boolean => {
     try {
       new URL(urlString);
@@ -83,7 +78,7 @@ const UpdatePlanForm = ({
 
   return (
     <div>
-      {/* Form For Creating Plan */}
+      {/* Form For Updating Plan */}
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <label className="text-xl" htmlFor="planTitle">
@@ -105,7 +100,7 @@ const UpdatePlanForm = ({
           )}
         </div>
         <div className="flex flex-col gap-2">
-          <label className="text-xl" htmlFor="planTitle">
+          <label className="text-xl" htmlFor="planSlug">
             Slug &#42;
           </label>
           <input
@@ -124,7 +119,7 @@ const UpdatePlanForm = ({
           )}
         </div>
         <div className="flex flex-col gap-2">
-          <label className="text-xl" htmlFor="planTitle">
+          <label className="text-xl" htmlFor="planDesc">
             Desc &#42;
           </label>
           <textarea
@@ -142,7 +137,7 @@ const UpdatePlanForm = ({
           )}
         </div>
         <div className="flex flex-col gap-2">
-          <label className="text-xl" htmlFor="planTitle">
+          <label className="text-xl" htmlFor="planImg">
             Image
           </label>
           <input

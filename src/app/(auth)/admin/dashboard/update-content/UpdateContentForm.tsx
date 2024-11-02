@@ -193,10 +193,16 @@ const UpdateContentForm = () => {
             />
           )}
           {content === ContentType.WORKOUT && (
-            <UpdateWorkoutForm id={selectedItem!} />
+            <UpdateWorkoutForm
+              workoutId={selectedItem!}
+              setIsSelectionDone={setIsSelectionDone}
+            />
           )}
           {content === ContentType.PROGRAM && (
-            <UpdateProgramForm id={selectedItem!} />
+            <UpdateProgramForm
+              programId={selectedItem!}
+              setIsSelectionDone={setIsSelectionDone}
+            />
           )}
         </div>
       )}
