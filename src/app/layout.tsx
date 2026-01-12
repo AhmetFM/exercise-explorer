@@ -13,12 +13,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://exercise-explorer-sigma.vercel.app/"),
   title: {
     default: "Exercise Explorer",
     template: "%s | Exercise Explorer",
   },
   description:
     "Exercise Explorer is a website for finding exercise routines for different fitness goals.",
+  openGraph: {
+    images: "/opengraph-image.png",
+  },
 };
 
 export default function RootLayout({

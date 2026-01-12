@@ -60,8 +60,9 @@ const StepThree = () => {
         setReturnedText(text);
       } catch (err) {
         console.log(error);
+      } finally {
+        setIsPending(false);
       }
-      setIsPending(false);
     };
 
     getResponse();
